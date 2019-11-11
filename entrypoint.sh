@@ -6,8 +6,14 @@ SSH_PATH="$HOME/.ssh"
 mkdir -p "$SSH_PATH"
 touch "$SSH_PATH/known_hosts"
 
-# echo -e "$DEPLOY_KEY" > "$SSH_PATH/deploy_key"
-printf '%b\n' "$DEPLOY_KEY" > "$SSH_PATH/deploy_key"
+if [ -z "$DEPLOY_KEY" ];
+then
+  echo ::set-output name=status::'Action did not find the DEPLOY_KEY secret.'
+  exit 1
+else
+  printf '%b\n' "$DEPLOY_KEY" > "$SSH_PATH/deploy_key"
+fi
+
 
 chmod 700 "$SSH_PATH"
 chmod 600 "$SSH_PATH/known_hosts" "$SSH_PATH/deploy_key"
