@@ -68,7 +68,8 @@ Friendly status of the rsync command.
 
 [twitter badge]: https://img.shields.io/twitter/follow/pendecthq.svg?style=social
 [twitter]: https://twitter.com/intent/follow?screen_name=pendecthq
-[marketplace]: https://github.com/marketplace/actions/shellcheck-linter-action
+[marketplace badge]: https://img.shields.io/badge/GitHub-Marketplace-lightblue.svg
+[marketplace]: https://github.com/marketplace/actions/rsyncer-action
 [LICENSE badge]: https://img.shields.io/github/license/Pendect/action-rsyncer.svg
 [LICENSE]: https://github.com/Pendect/action-rsyncer/blob/master/LICENSE
 [release badge]: https://img.shields.io/github/release/Pendect/action-rsyncer.svg
