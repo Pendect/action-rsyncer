@@ -3,7 +3,7 @@ name: 'Rsync deploy'
 description: 'Rsync content from a workflow to a remote server'
 author: 'Pendect Team'
 branding:
-  icon: 'copy'  
+  icon: 'copy'
   color: 'blue'
 inputs:
   flags:
