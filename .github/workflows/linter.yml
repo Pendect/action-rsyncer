@@ -1,0 +1,20 @@
+name: Lint files
+
+on: push
+
+jobs:
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v1
+
+      - name: Lint shell file
+        uses: azohra/shell-linter@v0.1.0
+        with:
+          path: "entrypoint.sh"
+
+      - name: Lint shell file
+        uses: brpaz/hadolint-action@master
+        with:
+          dockerfile: "Dockerfile"
