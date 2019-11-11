@@ -1,9 +1,9 @@
 # action.yml
-name: 'Rsync deploy'
-description: 'Rsync content from a workflow to a remote server'
+name: 'RSyncer Action'
+description: 'Sync content from a workflow to a remote server'
 author: 'Pendect Team'
 branding:
-  icon: 'copy'
+  icon: 'truck'
   color: 'blue'
 inputs:
   flags:
@@ -17,7 +17,7 @@ inputs:
   src:
     description: 'Local folder to be synced'
     required: true
-  dst:
+  dest:
     description: 'Remote server and path. i.e user@server.com:/var/www/server.com/'
     required: true
 outputs:
@@ -30,4 +30,4 @@ runs:
     - ${{ inputs.flags }}
     - ${{ inputs.options }}
     - ${{ inputs.src }}
-    - ${{ inputs.dst }}
+    - ${{ inputs.dest }}
