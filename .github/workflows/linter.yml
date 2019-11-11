@@ -14,7 +14,7 @@ jobs:
         with:
           path: "entrypoint.sh"
 
-      - name: Lint shell file
+      - name: Lint Dockerfile
         uses: brpaz/hadolint-action@master
         with:
           dockerfile: "Dockerfile"
