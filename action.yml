@@ -1,0 +1,33 @@
+# action.yml
+name: 'Rsync deploy'
+description: 'Rsync content from a workflow to a remote server'
+author: 'Pendect Team'
+branding:
+  icon: 'copy'  
+  color: 'blue'
+inputs:
+  flags:
+    description: 'Rsync flags'
+    required: true
+    default: '-avzr --delete'
+  options:
+    description: 'Rsync options (exclusion)'
+    required: true
+    default: ''
+  src:
+    description: 'Local folder to be synced'
+    required: true
+  dst:
+    description: 'Remote server and path. i.e user@server.com:/var/www/server.com/'
+    required: true
+outputs:
+  status:
+    description: 'Status of the command'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.flags }}
+    - ${{ inputs.options }}
+    - ${{ inputs.src }}
+    - ${{ inputs.dst }}
