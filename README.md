@@ -54,7 +54,7 @@ Create a new file in your repository: `.github/workflows/rsync.yml`.
     flags: '-avzr --delete'
     options: ''
     src: 'public/'
-    dst: 'user@server.com:/var/www/server.com'
+    dest: 'user@server.com:/var/www/server.com'
 
 - name: Display status from deploy
   run: echo "${{ steps.deploy.outputs.status }}"
