@@ -1,6 +1,6 @@
 FROM alpine:3.10
 
-LABEL version="1.0.0"
+LABEL version="1.1.0"
 LABEL maintainer="Pendect Tech Team <tech@pendect.com>" \
       org.label-schema.vendor="Pendect GmbH" \
       com.github.actions.name="RSyncer Action" \

@@ -26,6 +26,10 @@ This action uses [rsync](https://linux.die.net/man/1/rsync "Rsync's Homepage") t
 
 **Required** Rsync options. i.e. exclude Default `""`.
 
+### `ssh_options`
+
+**Required** SSH command options. i.e. "-p 2222" Default `""`.
+
 ### `src`
 
 **Required** Local path to be synced.
@@ -40,25 +44,66 @@ This action uses [rsync](https://linux.die.net/man/1/rsync "Rsync's Homepage") t
 
 Friendly status of the rsync command.
 
-## Example usage
+## Usage
 
-Create a new file in your repository: `.github/workflows/rsync.yml`.
+### Sync local folder to remote server
+
+This example syncs the local folder *public* with the */var/www/server.com* folder on the remote server *server.com*.
+
+Add the a workflow file in your repository: `.github/workflows/rsync.yml`.
 
 ```yml
 - name: Deploy to server
   id: deploy
-  uses: Pendect/action-rsyncer@master
+  uses: Pendect/action-rsyncer@v1.1.0
   env:
     DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
   with:
     flags: '-avzr --delete'
     options: ''
+    ssh_options: ''
     src: 'public/'
     dest: 'user@server.com:/var/www/server.com'
 
 - name: Display status from deploy
   run: echo "${{ steps.deploy.outputs.status }}"
 ```
+
+
+### Use distinct port on remote server
+
+This example deals with a server listening to ssh on a port other than 22.
+
+Using a rsync workflow file: `.github/workflows/rsync.yml`, we modify the *ssh_options* input to have the *-p 2222* option:
+
+```yml
+- name: Deploy to server
+  id: deploy
+  uses: Pendect/action-rsyncer@v1.1.0
+  env:
+    DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
+  with:
+    flags: '-avzr --delete'
+    options: ''
+    ssh_options: '-p 2222'
+    src: 'public/'
+    dest: 'user@server.com:/var/www/server.com'
+
+- name: Display status from deploy
+  run: echo "${{ steps.deploy.outputs.status }}"
+```
+
+
+## Changes
+
+### v1.1.0 (2019-12-05)
+
+* Add support to distinct remote port [ericof]
+
+### v1.0 (2019-11-1)
+
+* Initial release of Pendect/action-rsyncer [ericof]
+
 
 ## About
 

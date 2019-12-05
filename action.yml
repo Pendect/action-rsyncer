@@ -14,6 +14,10 @@ inputs:
     description: 'Rsync options (exclusion)'
     required: true
     default: ''
+  ssh_options:
+    description: 'SSH command line options'
+    required: true
+    default: ''
   src:
     description: 'Local folder to be synced'
     required: true
@@ -29,5 +33,6 @@ runs:
   args:
     - ${{ inputs.flags }}
     - ${{ inputs.options }}
+    - ${{ inputs.ssh_options }}
     - ${{ inputs.src }}
     - ${{ inputs.dest }}
