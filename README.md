@@ -28,15 +28,15 @@ This action uses [rsync](https://linux.die.net/man/1/rsync "Rsync's Homepage") t
 
 ### `ssh_options`
 
-**Required** SSH command options. i.e. "-p 2222" Default `""`.
+**Required** SSH command options. i.e. `-p 2222` Default `""`.
 
 ### `src`
 
 **Required** Local path to be synced.
 
-### `dst`
+### `dest`
 
-**Required** Remote server and path. i.e user@server.com:/var/www/server.com/
+**Required** Remote server and path. i.e `user@server.com:/var/www/server.com/`
 
 ## Outputs
 
