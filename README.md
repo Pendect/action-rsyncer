@@ -24,15 +24,15 @@ This action uses [rsync](https://linux.die.net/man/1/rsync "Rsync's Homepage") t
 
 ### `options`
 
-**Required** Rsync options. i.e. `--exclude` Default `""`.
+**Required** Rsync options. i.e. `--exclude`.
 
 ### `ssh_options`
 
-**Required** SSH command options. i.e. `-p 2222` Default `""`.
+**Required** SSH command options. i.e. `-p 2222`.
 
 ### `src`
 
-**Required** Local path to be synced. i.e. `public/` Default `./`.
+**Required** Local path to be synced. i.e. `public/`.
 
 ### `dest`
 
