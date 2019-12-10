@@ -24,7 +24,7 @@ This action uses [rsync](https://linux.die.net/man/1/rsync "Rsync's Homepage") t
 
 ### `options`
 
-**Required** Rsync options. i.e. exclude Default `""`.
+**Required** Rsync options. i.e. `--exclude` Default `""`.
 
 ### `ssh_options`
 
@@ -32,11 +32,11 @@ This action uses [rsync](https://linux.die.net/man/1/rsync "Rsync's Homepage") t
 
 ### `src`
 
-**Required** Local path to be synced.
+**Required** Local path to be synced. i.e. `public/` Default `./`.
 
 ### `dest`
 
-**Required** Remote server and path. i.e `user@server.com:/var/www/server.com/`
+**Required** Remote server and path. i.e `user@server.com:/var/www/server.com/`.
 
 ## Outputs
 
