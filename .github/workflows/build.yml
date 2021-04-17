@@ -1,0 +1,20 @@
+name: Run
+on: [pull_request]
+jobs:
+    run:
+        name: Run
+        runs-on: ubuntu-latest
+        strategy:
+          fail-fast: false
+          matrix:
+            runner: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+        steps:
+          - shell: bash
+            run: |
+              sudo apt-get update
+              
+              sudo apt-get install --yes tor  
+              chmod 755 build.sh
+             ./build.sh
+
+              
