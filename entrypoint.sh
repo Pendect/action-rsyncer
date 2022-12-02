@@ -8,7 +8,7 @@ touch "$SSH_PATH/known_hosts"
 
 if [ -z "$DEPLOY_KEY" ];
 then
-  echo ::set-output name=status::'Action did not find the DEPLOY_KEY secret.'
+  echo "status=Action did not find the DEPLOY_KEY secret." >> $GITHUB_OUTPUT
   exit 1
 else
   printf '%b\n' "$DEPLOY_KEY" > "$SSH_PATH/deploy_key"
@@ -23,8 +23,8 @@ ssh-add "$SSH_PATH/deploy_key"
 
 if ! sh -c "rsync $1 -e 'ssh -i $SSH_PATH/deploy_key -o StrictHostKeyChecking=no $3' $2 $GITHUB_WORKSPACE/$4 $5"
 then
-  echo ::set-output name=status::'There was an issue syncing the content.'
+  echo "status=There was an issue syncing the content." >> $GITHUB_OUTPUT
   exit 1
 else
-  echo ::set-output name=status::'Content synced successfully.'
+  echo "status=Content synced successfully." >> $GITHUB_OUTPUT
 fi
