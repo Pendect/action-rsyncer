@@ -9,7 +9,7 @@ inputs:
   flags:
     description: 'Rsync flags'
     required: true
-    default: '-avzr --delete'
+    default: '-avz --delete'
   options:
     description: 'Rsync options (exclusion)'
     required: true
