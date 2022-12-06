@@ -116,7 +116,7 @@ Stay up to date with news events across the globe and be a part in the fight aga
 [![pendecthq on twitter][twitter badge]][twitter]
 
 [twitter badge]: https://img.shields.io/twitter/follow/pendecthq.svg?style=social
-[twitter]: https://twitter.com/intent/follow?screen_name=pendecthq 
+[twitter]: https://twitter.com/intent/follow?screen_name=pendecthq
 [marketplace badge]: https://img.shields.io/badge/GitHub-Marketplace-lightblue.svg
 [marketplace]: https://github.com/marketplace/actions/rsyncer-action
 [LICENSE badge]: https://img.shields.io/github/license/Pendect/action-rsyncer.svg

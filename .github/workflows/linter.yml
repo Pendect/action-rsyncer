@@ -7,14 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
 
       - name: Lint shell file
-        uses: azohra/shell-linter@v0.1.0
+        uses: azohra/shell-linter@latest
         with:
           path: "entrypoint.sh"
 
       - name: Lint Dockerfile
-        uses: brpaz/hadolint-action@master
+        uses: brpaz/hadolint-action@3.0.0
         with:
           dockerfile: "Dockerfile"
