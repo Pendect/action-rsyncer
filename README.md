@@ -96,6 +96,10 @@ Using a rsync workflow file: `.github/workflows/rsync.yml`, we modify the *ssh_o
 
 ## Changes
 
+### v2.0.0 (2022-12-06)
+
+* Address the deprecation of save-state and set-output commands [taupecat]
+
 ### v1.1.0 (2019-12-05)
 
 * Add support to distinct remote port [ericof]
